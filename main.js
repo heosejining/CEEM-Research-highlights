@@ -73,23 +73,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     container.innerHTML += paperHTML;
                 });
 
-            // [C] 인용팁 섹션 생성
-            const citationContainer = document.getElementById('citation-tip-container');
-            if (citationContainer && data.citationTip) {
-                const tip = data.citationTip;
-                citationContainer.innerHTML = `
-                    <div class="citation-tip-box">
-                        <p class="citation-tip-intro">${tip.intro || ''}</p>
-                        <div class="citation-tip-format">
-                            <p>${tip.format || ''}</p>
-                        </div>
-                        ${tip.example ? `<div class="citation-tip-example">
-                            <span class="citation-tip-label">예시</span>
-                            <p>${tip.example}</p>
-                        </div>` : ''}
-                        ${tip.note ? `<p class="citation-tip-note">${tip.note}</p>` : ''}
-                    </div>`;
-            }
+                // [C] 인용팁 섹션 생성
+                const citationContainer = document.getElementById('citation-tip-container');
+                if (citationContainer && data.citationTip) {
+                    const tip = data.citationTip;
+                    citationContainer.innerHTML = `
+                        <div class="citation-tip-box">
+                            <p class="citation-tip-intro">${tip.intro || ''}</p>
+                            <div class="citation-tip-format">
+                                <p>${tip.format || ''}</p>
+                            </div>
+                            ${tip.example ? `<div class="citation-tip-example">
+                                <span class="citation-tip-label">예시</span>
+                                <p>${tip.example}</p>
+                            </div>` : ''}
+                            ${tip.note ? `<p class="citation-tip-note">${tip.note}</p>` : ''}
+                        </div>`;
+                }
 
                 // 데이터가 생성된 후 애니메이션 효과(Observer) 적용
                 setupAnimations();
